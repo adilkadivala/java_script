@@ -1,8 +1,8 @@
 // Variables: let, const, var
 // Data Types: Number, String, Boolean, Null, Undefined, Object, Symbol
 
-let age = 25;
-const name = "John";
+var age = 25;
 let isStudent = true;
+const name = "John";
 
-
+console.log(age, name, isStudent);

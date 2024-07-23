@@ -103,6 +103,77 @@
           "message": 5
         }
       }
+    },
+    {
+      "label": "Compile and run C",
+      "type": "shell",
+      "command": "",
+      "args": [
+        "copy",
+        "\"${file}\"",
+        "${workspaceFolder}\\jspwTest.c",
+        "&&",
+        "gcc",
+        "jspwTest.c",
+        "-o",
+        "jspwTest",
+        "&&",
+        "jspwTest",
+        "<",
+        "input.txt",
+        ">",
+        "output.txt",
+        "&&",
+        "del",
+        "jspwTest.exe",
+        "&&",
+        "del",
+        "jspwTest.c"
+      ],
+      "presentation": {
+        "reveal": "never"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "owner": "c",
+        "fileLocation": ["relative", "${workspaceRoot}"],
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        }
+      }
+    },
+    {
+      "label": "Run JavaScript",
+      "type": "shell",
+      "command": "",
+      "args": ["node", "${relativeFile}", "<", "input.txt", ">", "output.txt"],
+      "presentation": {
+        "reveal": "never"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "owner": "js",
+        "fileLocation": ["relative", "${workspaceRoot}"],
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        }
+      }
     }
   ]
 }
